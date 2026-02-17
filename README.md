@@ -36,6 +36,92 @@
 - **2026-02-03** ⚡ Integrated vLLM for local LLM support and improved natural language task scheduling!
 - **2026-02-02** 🎉 nanobot officially launched! Welcome to try 🐈 nanobot!
 
+## 🖥️ Streamlit Web UI
+
+nanobot now includes a **full-featured Streamlit web interface** for managing your AI assistant through a browser! This provides an intuitive graphical alternative to the CLI.
+
+### 🚀 Quick Start
+
+```bash
+# Install Streamlit dependencies
+pip install -r streamlit_requirements.txt
+
+# Launch the UI (recommended)
+python start_ui.py
+
+# Or run directly with Streamlit
+streamlit run streamlit_app/app.py
+
+# On Windows, you can also use the batch file
+run_streamlit.bat
+```
+
+The UI will be available at `http://localhost:8501` by default.
+
+### ✨ Features
+
+The Streamlit UI provides a comprehensive dashboard with **13 feature-rich pages**:
+
+| Page | Icon | Description |
+|------|------|-------------|
+| **Setup** | ⚙️ | Initial configuration wizard for API keys, model selection, and settings |
+| **Dashboard** | 📊 | Overview of system status, metrics, and quick actions |
+| **Chat** | 💬 | Interactive chat interface with the AI assistant |
+| **Providers** | 🤖 | Manage LLM providers (OpenRouter, OpenAI, Anthropic, DeepSeek, etc.) |
+| **Channels** | 📱 | Configure chat platforms (Telegram, Discord, WhatsApp, Slack, etc.) |
+| **Cron** | ⏰ | Schedule automated tasks, reminders, and recurring jobs |
+| **Memory** | 🧠 | View, search, and manage conversation memory |
+| **Skills** | 🎯 | Browse, install, and enable agent skills |
+| **Sessions** | 💭 | Manage conversation sessions and history |
+| **Tools** | 🔧 | Configure built-in and custom tools |
+| **Workspace** | 📁 | File browser and workspace management |
+| **Gateway** | 🌐 | Start/stop the gateway for chat channels |
+| **Agent Tools** | 🛠️ | Advanced tool configuration and management |
+
+### 🎨 UI Highlights
+
+- **Modern Design**: Clean, professional interface with intuitive navigation
+- **Real-time Updates**: Live status monitoring and metrics
+- **Easy Configuration**: Visual forms for all settings (no JSON editing required)
+- **Full Chat Functionality**: Complete chat interface with message history
+- **Responsive Layout**: Works on desktop and tablet screens
+- **Dark/Light Themes**: Supports Streamlit theme customization
+
+### 📁 UI Structure
+
+```
+streamlit_app/
+├── app.py              # Main application entry point
+├── __init__.py         # Package initialization
+└── pages/
+    ├── 0_Setup.py      # Configuration wizard
+    ├── 1_Dashboard.py  # Status overview
+    ├── 2_Chat.py       # Chat interface
+    ├── 3_Providers.py  # LLM provider management
+    ├── 4_Channels.py   # Chat platform configuration
+    ├── 5_Cron.py       # Scheduled tasks
+    ├── 6_Memory.py     # Memory management
+    ├── 7_Skills.py     # Skills browser
+    ├── 8_Sessions.py   # Session management
+    ├── 9_Tools.py      # Tool configuration
+    ├── 10_Workspace.py # File browser
+    ├── 11_Gateway.py   # Gateway controls
+    └── 12_Agent_Tools.py # Advanced tools
+```
+
+### 🔧 Requirements
+
+The Streamlit UI requires the following packages (included in `streamlit_requirements.txt`):
+
+```
+streamlit>=1.28.0
+pandas>=2.0.0
+plotly>=5.18.0
+```
+
+> [!TIP]
+> The UI connects to the same `~/.nanobot/config.json` configuration used by the CLI. Changes made in the UI are immediately available to the CLI and vice versa.
+
 ## Key Features of nanobot:
 
 🪶 **Ultra-Lightweight**: Just ~4,000 lines of core agent code — 99% smaller than Clawdbot.
@@ -844,52 +930,6 @@ docker run -v ~/.nanobot:/root/.nanobot -p 18790:18790 nanobot gateway
 docker run -v ~/.nanobot:/root/.nanobot --rm nanobot agent -m "Hello!"
 docker run -v ~/.nanobot:/root/.nanobot --rm nanobot status
 ```
-
-## 🖥️ Streamlit Web UI
-
-nanobot includes a full-featured **Streamlit web interface** for managing your AI assistant through a browser.
-
-### Quick Start
-
-```bash
-# Install Streamlit dependencies
-pip install -r streamlit_requirements.txt
-
-# Launch the UI
-python start_ui.py
-
-# Or run directly with Streamlit
-streamlit run streamlit_app/app.py
-```
-
-### Features
-
-The Streamlit UI provides a comprehensive dashboard with the following pages:
-
-| Page | Description |
-|------|-------------|
-| **Setup** | Initial configuration wizard for API keys and settings |
-| **Dashboard** | Overview of system status, metrics, and quick actions |
-| **Chat** | Interactive chat interface with the AI assistant |
-| **Providers** | Manage LLM providers (OpenRouter, OpenAI, Anthropic, etc.) |
-| **Channels** | Configure chat platforms (Telegram, Discord, WhatsApp, etc.) |
-| **Cron** | Schedule automated tasks and reminders |
-| **Memory** | View and manage conversation memory |
-| **Skills** | Browse and enable agent skills |
-| **Sessions** | Manage conversation sessions |
-| **Tools** | Configure built-in and custom tools |
-| **Workspace** | File browser and workspace management |
-| **Gateway** | Start/stop the gateway for chat channels |
-| **Agent Tools** | Advanced tool configuration |
-
-### Screenshots
-
-The UI features a clean, modern design with:
-- 🎨 Dark/light theme support
-- 📊 Real-time status monitoring
-- 🔧 Easy configuration management
-- 💬 Full chat functionality
-- 📱 Responsive layout
 
 ## 📁 Project Structure
 
