@@ -1,0 +1,29 @@
+# Streamlit UI for Nanobot
+streamlit>=1.28.0
+
+# Core nanobot dependencies
+litellm>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+loguru>=0.7.0
+httpx>=0.25.0
+websockets>=12.0
+
+# Cron support
+croniter>=2.0.0
+
+# Web tools
+readability-lxml>=0.8.0
+lxml>=4.9.0
+
+# Optional channel dependencies (install as needed)
+# python-telegram-bot>=20.0
+# slack-sdk>=3.0.0
+# lark-oapi>=1.0.0
+# dingtalk-stream>=1.0.0
+# qq-botpy>=1.0.0
+# python-socketio>=5.0.0
+
+# MCP support
+mcp>=1.0.0
+json-repair>=0.7.0
