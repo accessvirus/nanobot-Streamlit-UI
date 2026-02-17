@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://www.dataquest.io/wp-content/uploads/2024/02/Why-Should-You-Learn-Streamlit-in-2024.png" alt="Streamlit UI" width="800">
+</p>
+
 <div align="center">
   <img src="nanobot_logo.png" alt="nanobot" width="500">
   <h1>nanobot: Ultra-Lightweight Personal AI Assistant</h1>
