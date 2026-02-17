@@ -845,6 +845,52 @@ docker run -v ~/.nanobot:/root/.nanobot --rm nanobot agent -m "Hello!"
 docker run -v ~/.nanobot:/root/.nanobot --rm nanobot status
 ```
 
+## 🖥️ Streamlit Web UI
+
+nanobot includes a full-featured **Streamlit web interface** for managing your AI assistant through a browser.
+
+### Quick Start
+
+```bash
+# Install Streamlit dependencies
+pip install -r streamlit_requirements.txt
+
+# Launch the UI
+python start_ui.py
+
+# Or run directly with Streamlit
+streamlit run streamlit_app/app.py
+```
+
+### Features
+
+The Streamlit UI provides a comprehensive dashboard with the following pages:
+
+| Page | Description |
+|------|-------------|
+| **Setup** | Initial configuration wizard for API keys and settings |
+| **Dashboard** | Overview of system status, metrics, and quick actions |
+| **Chat** | Interactive chat interface with the AI assistant |
+| **Providers** | Manage LLM providers (OpenRouter, OpenAI, Anthropic, etc.) |
+| **Channels** | Configure chat platforms (Telegram, Discord, WhatsApp, etc.) |
+| **Cron** | Schedule automated tasks and reminders |
+| **Memory** | View and manage conversation memory |
+| **Skills** | Browse and enable agent skills |
+| **Sessions** | Manage conversation sessions |
+| **Tools** | Configure built-in and custom tools |
+| **Workspace** | File browser and workspace management |
+| **Gateway** | Start/stop the gateway for chat channels |
+| **Agent Tools** | Advanced tool configuration |
+
+### Screenshots
+
+The UI features a clean, modern design with:
+- 🎨 Dark/light theme support
+- 📊 Real-time status monitoring
+- 🔧 Easy configuration management
+- 💬 Full chat functionality
+- 📱 Responsive layout
+
 ## 📁 Project Structure
 
 ```
@@ -860,11 +906,14 @@ nanobot/
 ├── channels/       # 📱 Chat channel integrations
 ├── bus/            # 🚌 Message routing
 ├── cron/           # ⏰ Scheduled tasks
-├── heartbeat/      # 💓 Proactive wake-up
+├── ├── heartbeat/  # 💓 Proactive wake-up
 ├── providers/      # 🤖 LLM providers (OpenRouter, etc.)
 ├── session/        # 💬 Conversation sessions
 ├── config/         # ⚙️ Configuration
-└── cli/            # 🖥️ Commands
+├── cli/            # 🖥️ Commands
+└── streamlit_app/  # 🌐 Streamlit Web UI
+    ├── app.py      #    Main application entry
+    └── pages/      #    UI pages (Dashboard, Chat, etc.)
 ```
 
 ## 🤝 Contribute & Roadmap
